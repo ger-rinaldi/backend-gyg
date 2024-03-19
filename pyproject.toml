@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "presupuestador-gyg-api"
+version = "0.1.0"
+description = ""
+authors = ["German Rinaldi <110374480+ger-rinaldi@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "^3.0.2"
+sqlalchemy = "^2.0.28"
+mysql-connector-python = "^8.3.0"
+pydantic = "^2.6.4"
+bcrypt = "^4.1.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.3.0"
+flake8 = "^7.0.0"
+mypy = "^1.9.0"
+isort = "^5.13.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
