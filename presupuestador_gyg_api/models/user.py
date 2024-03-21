@@ -12,3 +12,6 @@ class User(CustomBase):
     username: Mapped[str] = mapped_column(String(20), unique=True)
     email: Mapped[str] = mapped_column(String(250), unique=True)
     password_hash: Mapped[str] = mapped_column(String(60))
+    session_key: Mapped[str] = mapped_column(String(80), default="no_session")
+    personal_session_salt: Mapped[str] = mapped_column(String(80), default="no_session")
+    is_admin: Mapped[bool] = mapped_column(default=False)
