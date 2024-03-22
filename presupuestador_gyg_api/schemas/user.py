@@ -1,8 +1,4 @@
-from pydantic import (
-    BaseModel,
-    EmailStr,
-    Field,
-)
+from pydantic import BaseModel, EmailStr, Field, SecretStr
 
 
 class User(BaseModel):
@@ -10,5 +6,5 @@ class User(BaseModel):
     surname: str = Field(min_length=2, max_length=40)
     username: str = Field(min_length=2, max_length=20)
     email: EmailStr
-    password: Field(min_length=10, max_length=40)  # type: ignore
+    password: str = Field(min_length=10, max_length=40)  # type: ignore
     is_admin: bool = Field(default=False)
