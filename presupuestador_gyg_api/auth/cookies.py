@@ -209,10 +209,10 @@ def _is_fresh_cookie(cookie_expires: str, cookie_max_age: int) -> bool:
     expire_date = datetime.datetime.combine(
         expire_date.date(),
         expire_date.time(),
-        tzinfo=datetime.UTC,
+        tzinfo=datetime.timezone.utc,
     )
 
-    cookie_age = datetime.datetime.now(datetime.UTC) - expire_date
+    cookie_age = datetime.datetime.now(datetime.timezone.utc) - expire_date
 
     if cookie_age > max_age_delta:
         return False
